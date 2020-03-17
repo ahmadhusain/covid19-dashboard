@@ -1,0 +1,12 @@
+name: covid19-dashboard
+title: covid19-dashboard
+username:
+account: ahmadhusain
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1956918
+bundleId: 2888886
+url: https://ahmadhusain.shinyapps.io/covid19-dashboard/
+when: 1584416959.70793
+asMultiple: FALSE
+asStatic: FALSE

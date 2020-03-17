@@ -1,0 +1,214 @@
+hc-group,hc-middle-x,hc-middle-y,hc-key,hc-a2,name,labelrank,country-abbrev,subregion,region-wb,iso-a3,iso-a2,woe-id,continent
+admin0,0.48,0.54,fo,FO,Faroe Islands,6,Faeroe Is.,Northern Europe,Europe & Central Asia,FRO,FO,23424816,Europe
+admin0,0.57,0.58,um,UM,United States Minor Outlying Islands,5,U.S. MOI,Seven seas (open ocean),East Asia & Pacific,UMI,UM,28289407,North America
+admin0,0.68,0.68,us,US,United States of America,2,U.S.A.,Northern America,North America,USA,US,23424977,North America
+admin0,0.52,0.66,jp,JP,Japan,2,Japan,Eastern Asia,East Asia & Pacific,JPN,JP,23424856,Asia
+admin0,0.58,0.41,sc,SC,Seychelles,6,Syc.,Eastern Africa,Sub-Saharan Africa,SYC,SC,23424941,Seven seas (open ocean)
+admin0,0.34,0.43,in,IN,India,2,India,Southern Asia,South Asia,IND,IN,23424848,Asia
+admin0,0.28,0.04,fr,FR,France,2,Fr.,Western Europe,Europe & Central Asia,FRA,FR,-90,Europe
+admin0,0.5,0.52,fm,FM,Federated States of Micronesia,6,F.S.M.,Micronesia,East Asia & Pacific,FSM,FM,23424815,Oceania
+admin0,0.41,0.56,cn,CN,China,2,China,Eastern Asia,East Asia & Pacific,CHN,CN,23424781,Asia
+admin0,0.46,0.5,pt,PT,Portugal,2,Port.,Southern Europe,Europe & Central Asia,PRT,PT,23424925,Europe
+admin0,0.86,0.57,sw,SW,Serranilla Bank,5,S.B.,Caribbean,Latin America & Caribbean,-99,SW,-99,North America
+admin0,0.54,0.51,sh,SH,Scarborough Reef,6,S.R.,South-Eastern Asia,East Asia & Pacific,-99,SH,-99,Asia
+admin0,0.54,0.34,br,BR,Brazil,2,Brazil,South America,Latin America & Caribbean,BRA,BR,23424768,South America
+admin0,0.28,0.65,ki,KI,Kiribati,6,Kir.,Micronesia,East Asia & Pacific,KIR,KI,23424867,Oceania
+admin0,0.4,0.19,ph,PH,Philippines,2,Phil.,South-Eastern Asia,East Asia & Pacific,PHL,PH,23424934,Asia
+admin0,0.51,0.49,mx,MX,Mexico,2,Mex.,Central America,Latin America & Caribbean,MEX,MX,23424900,North America
+admin0,0.76,0.27,es,ES,Spain,2,Sp.,Southern Europe,Europe & Central Asia,ESP,ES,23424950,Europe
+admin0,0.49,0.73,bu,BU,Bajo Nuevo Bank (Petrel Is.),8,NA,Caribbean,Latin America & Caribbean,-99,BU,-99,North America
+admin0,0.57,0.53,mv,MV,Maldives,5,Mald.,Southern Asia,South Asia,MDV,MV,23424899,Seven seas (open ocean)
+admin0,0.5,0.5,sp,SP,Spratly Islands,6,Spratly Is.,South-Eastern Asia,East Asia & Pacific,SPI,SP,23424921,Asia
+admin0,0.69,0.09,gb,GB,United Kingdom,2,U.K.,Northern Europe,Europe & Central Asia,GBR,GB,-90,Europe
+admin0,0.3,0.43,gr,GR,Greece,3,Greece,Southern Europe,Europe & Central Asia,GRC,GR,23424833,Europe
+admin0,0.56,0.57,as,AS,American Samoa,4,Am. Samoa,Polynesia,East Asia & Pacific,ASM,AS,23424746,Oceania
+admin0,0.35,0.49,dk,DK,Denmark,4,Den.,Northern Europe,Europe & Central Asia,DNK,DK,23424796,Europe
+admin0,0.55,0.43,gl,GL,Greenland,3,Grlnd.,Northern America,Europe & Central Asia,GRL,GL,23424828,North America
+admin0,0.45,0.44,gu,GU,Guam,6,Guam,Micronesia,East Asia & Pacific,GUM,GU,23424832,Oceania
+admin0,0.45,0.49,mp,MP,Northern Mariana Islands,6,N.M.I.,Micronesia,East Asia & Pacific,MNP,MP,23424788,Oceania
+admin0,0.48,0.65,pr,PR,Puerto Rico,5,P.R.,Caribbean,Latin America & Caribbean,PRI,PR,23424935,North America
+admin0,0.48,0.19,vi,VI,United States Virgin Islands,6,V.I. (U.S.),Caribbean,Latin America & Caribbean,VIR,VI,23424985,North America
+admin0,0.29,0.64,ca,CA,Canada,2,Can.,Northern America,North America,CAN,CA,23424775,North America
+admin0,0.55,0.5,st,ST,Sao Tome and Principe,6,S.T.P.,Middle Africa,Sub-Saharan Africa,STP,ST,23424966,Africa
+admin0,0.56,0.5,cv,CV,Cape Verde,4,C.Vd.,Western Africa,Sub-Saharan Africa,CPV,CV,23424794,Africa
+admin0,0.54,0.47,dm,DM,Dominica,6,D'inca,Caribbean,Latin America & Caribbean,DMA,DM,23424798,North America
+admin0,0.99,0.01,nl,NL,Netherlands,5,Neth.,Western Europe,Europe & Central Asia,NLD,NL,-90,Europe
+admin0,0.5,0.52,jm,JM,Jamaica,4,Jam.,Caribbean,Latin America & Caribbean,JAM,JM,23424858,North America
+admin0,0.5,0.54,ws,WS,Samoa,4,Samoa,Polynesia,East Asia & Pacific,WSM,WS,23424992,Oceania
+admin0,0.88,0.44,om,OM,Oman,4,Oman,Western Asia,Middle East & North Africa,OMN,OM,23424898,Asia
+admin0,0.5,0.5,vc,VC,Saint Vincent and the Grenadines,6,St.V.G.,Caribbean,Latin America & Caribbean,VCT,VC,23424981,North America
+admin0,0.34,0.49,tr,TR,Turkey,2,Tur.,Western Asia,Europe & Central Asia,TUR,TR,23424969,Asia
+admin0,0.85,0.61,bd,BD,Bangladesh,3,Bang.,Southern Asia,South Asia,BGD,BD,23424759,Asia
+admin0,0.52,0.47,lc,LC,Saint Lucia,6,S.L.,Caribbean,Latin America & Caribbean,LCA,LC,23424951,North America
+admin0,0.53,0.5,nr,NR,Nauru,6,Nauru,Micronesia,East Asia & Pacific,NRU,NR,23424912,Oceania
+admin0,0.1,0.93,no,NO,Norway,3,Nor.,Northern Europe,Europe & Central Asia,NOR,NO,-90,Europe
+admin0,0.57,0.49,kn,KN,Saint Kitts and Nevis,6,St.K.N.,Caribbean,Latin America & Caribbean,KNA,KN,23424940,North America
+admin0,0.45,0.5,bh,BH,Bahrain,4,Bahr.,Western Asia,Middle East & North Africa,BHR,BH,23424753,Asia
+admin0,0.54,0.34,to,TO,Tonga,4,Tongo,Polynesia,East Asia & Pacific,TON,TO,23424964,Oceania
+admin0,0.63,0.54,fi,FI,Finland,3,Fin.,Northern Europe,Europe & Central Asia,FIN,FI,23424812,Europe
+admin0,0.38,0.41,id,ID,Indonesia,2,Indo.,South-Eastern Asia,East Asia & Pacific,IDN,ID,23424846,Asia
+admin0,0.63,0.58,mu,MU,Mauritius,5,Mus.,Eastern Africa,Sub-Saharan Africa,MUS,MU,23424894,Seven seas (open ocean)
+admin0,0.4,0.48,se,SE,Sweden,3,Swe.,Northern Europe,Europe & Central Asia,SWE,SE,23424954,Europe
+admin0,0.46,0.44,tt,TT,Trinidad and Tobago,5,Tr.T.,Caribbean,Latin America & Caribbean,TTO,TT,23424958,North America
+admin0,0.9,0.26,my,MY,Malaysia,3,Malay.,South-Eastern Asia,East Asia & Pacific,MYS,MY,23424901,Asia
+admin0,0.22,0.5,pa,PA,Panama,4,Pan.,Central America,Latin America & Caribbean,PAN,PA,23424924,North America
+admin0,0.38,0.44,pw,PW,Palau,6,Palau,Micronesia,East Asia & Pacific,PLW,PW,23424927,Oceania
+admin0,0.25,0.5,tv,TV,Tuvalu,6,Tuv.,Polynesia,East Asia & Pacific,TUV,TV,23424970,Oceania
+admin0,0.49,0.6,mh,MH,Marshall Islands,6,M. Is.,Micronesia,East Asia & Pacific,MHL,MH,23424932,Oceania
+admin0,0.51,0.9,cl,CL,Chile,2,Chile,South America,Latin America & Caribbean,CHL,CL,23424782,South America
+admin0,0.25,0.49,th,TH,Thailand,3,Thai.,South-Eastern Asia,East Asia & Pacific,THA,TH,23424960,Asia
+admin0,0.5,0.5,gd,GD,Grenada,6,Gren.,Caribbean,Latin America & Caribbean,GRD,GD,23424826,North America
+admin0,0.35,0.41,ee,EE,Estonia,6,Est.,Northern Europe,Europe & Central Asia,EST,EE,23424805,Europe
+admin0,0.5,0.48,ag,AG,Antigua and Barbuda,6,Ant.B.,Caribbean,Latin America & Caribbean,ATG,AG,23424737,North America
+admin0,0.49,0.41,tw,TW,Taiwan,3,Taiwan,Eastern Asia,East Asia & Pacific,TWN,TW,23424971,Asia
+admin0,0.31,0.56,bb,BB,Barbados,5,Barb.,Caribbean,Latin America & Caribbean,BRB,BB,23424754,North America
+admin0,0.79,0.71,it,IT,Italy,2,Italy,Southern Europe,Europe & Central Asia,ITA,IT,23424853,Europe
+admin0,0.49,0.53,mt,MT,Malta,5,Malta,Southern Europe,Middle East & North Africa,MLT,MT,23424897,Europe
+admin0,0.6,0.53,vu,VU,Vanuatu,4,Van.,Melanesia,East Asia & Pacific,VUT,VU,23424907,Oceania
+admin0,0.5,0.57,sg,SG,Singapore,6,Sing.,South-Eastern Asia,East Asia & Pacific,SGP,SG,23424948,Asia
+admin0,0.39,0.51,cy,CY,Cyprus,5,Cyp.,Western Asia,Europe & Central Asia,CYP,CY,-90,Asia
+admin0,0.62,0.91,lk,LK,Sri Lanka,3,Sri L.,Southern Asia,South Asia,LKA,LK,23424778,Asia
+admin0,0.41,0.51,km,KM,Comoros,6,Com.,Eastern Africa,Sub-Saharan Africa,COM,KM,23424786,Africa
+admin0,0.44,0.33,fj,FJ,Fiji,6,Fiji,Melanesia,East Asia & Pacific,FJI,FJ,23424813,Oceania
+admin0,0.57,0.56,ru,RU,Russia,2,Rus.,Eastern Europe,Europe & Central Asia,RUS,RU,23424936,Europe
+admin0,0.61,0.44,va,VA,Vatican,6,Vat.,Southern Europe,Europe & Central Asia,VAT,VA,23424986,Europe
+admin0,0.48,0.42,sm,SM,San Marino,6,S.M.,Southern Europe,Europe & Central Asia,SMR,SM,23424947,Europe
+admin0,0.57,0.46,kz,KZ,Kazakhstan,3,Kaz.,Central Asia,Europe & Central Asia,KAZ,KZ,-90,Asia
+admin0,0.83,0.51,az,AZ,Azerbaijan,5,Aze.,Western Asia,Europe & Central Asia,AZE,AZ,23424741,Asia
+admin0,0.28,0.56,tj,TJ,Tajikistan,4,Tjk.,Central Asia,Europe & Central Asia,TJK,TJ,23424961,Asia
+admin0,0.52,0.45,ls,LS,Lesotho,6,Les.,Southern Africa,Sub-Saharan Africa,LSO,LS,23424880,Africa
+admin0,0.46,0.53,uz,UZ,Uzbekistan,3,Uzb.,Central Asia,Europe & Central Asia,UZB,UZ,23424980,Asia
+admin0,0.6,0.21,ma,MA,Morocco,3,Mor.,Northern Africa,Middle East & North Africa,MAR,MA,23424893,Africa
+admin0,0.5,0.54,co,CO,Colombia,2,Col.,South America,Latin America & Caribbean,COL,CO,23424787,South America
+admin0,0.65,0.36,tl,TL,East Timor,5,T.L.,South-Eastern Asia,East Asia & Pacific,TLS,TL,23424968,Asia
+admin0,0.5,0.5,tz,TZ,United Republic of Tanzania,3,Tanz.,Eastern Africa,Sub-Saharan Africa,TZA,TZ,23424973,Africa
+admin0,0.46,0.27,ar,AR,Argentina,2,Arg.,South America,Latin America & Caribbean,ARG,AR,23424747,South America
+admin0,0.45,0.53,sa,SA,Saudi Arabia,2,Saud.,Western Asia,Middle East & North Africa,SAU,SA,23424938,Asia
+admin0,0.34,0.64,pk,PK,Pakistan,2,Pak.,Southern Asia,South Asia,PAK,PK,23424922,Asia
+admin0,0.39,0.75,ye,YE,Yemen,3,Yem.,Western Asia,Middle East & North Africa,YEM,YE,23425002,Asia
+admin0,0.59,0.65,ae,AE,United Arab Emirates,4,U.A.E.,Western Asia,Middle East & North Africa,ARE,AE,23424738,Asia
+admin0,0.87,0.7,ke,KE,Kenya,2,Ken.,Eastern Africa,Sub-Saharan Africa,KEN,KE,23424863,Africa
+admin0,0.69,0.71,pe,PE,Peru,2,Peru,South America,Latin America & Caribbean,PER,PE,23424919,South America
+admin0,0.46,0.38,do,DO,Dominican Republic,5,Dom. Rep.,Caribbean,Latin America & Caribbean,DOM,DO,23424800,North America
+admin0,0.82,0.96,ht,HT,Haiti,5,Haiti,Caribbean,Latin America & Caribbean,HTI,HT,23424839,North America
+admin0,0.14,0.5,pg,PG,Papua New Guinea,2,P.N.G.,Melanesia,East Asia & Pacific,PNG,PG,23424926,Oceania
+admin0,0.5,0.67,ao,AO,Angola,3,Ang.,Middle Africa,Sub-Saharan Africa,AGO,AO,23424745,Africa
+admin0,0.84,0.49,kh,KH,Cambodia,3,Camb.,South-Eastern Asia,East Asia & Pacific,KHM,KH,23424776,Asia
+admin0,0.59,0.89,vn,VN,Vietnam,2,Viet.,South-Eastern Asia,East Asia & Pacific,VNM,VN,23424984,Asia
+admin0,0.83,0.28,mz,MZ,Mozambique,3,Moz.,Eastern Africa,Sub-Saharan Africa,MOZ,MZ,23424902,Africa
+admin0,0.55,0.31,cr,CR,Costa Rica,5,C.R.,Central America,Latin America & Caribbean,CRI,CR,23424791,North America
+admin0,0.57,0.49,bj,BJ,Benin,5,Benin,Western Africa,Sub-Saharan Africa,BEN,BJ,23424764,Africa
+admin0,0.36,0.33,ng,NG,Nigeria,2,Nigeria,Western Africa,Sub-Saharan Africa,NGA,NG,23424908,Africa
+admin0,0.58,0.51,ir,IR,Iran,2,Iran,Southern Asia,Middle East & North Africa,IRN,IR,23424851,Asia
+admin0,0.5,0.55,sv,SV,El Salvador,6,El. S.,Central America,Latin America & Caribbean,SLV,SV,23424807,North America
+admin0,0.48,0.48,sl,SL,Sierra Leone,4,S.L.,Western Africa,Sub-Saharan Africa,SLE,SL,23424946,Africa
+admin0,0.55,0.49,gw,GW,Guinea Bissau,6,GnB.,Western Africa,Sub-Saharan Africa,GNB,GW,23424929,Africa
+admin0,0.35,0.59,hr,HR,Croatia,6,Cro.,Southern Europe,Europe & Central Asia,HRV,HR,23424843,Europe
+admin0,0.53,0.5,bz,BZ,Belize,6,Belize,Central America,Latin America & Caribbean,BLZ,BZ,23424760,North America
+admin0,0.36,0.7,za,ZA,South Africa,2,S.Af.,Southern Africa,Sub-Saharan Africa,ZAF,ZA,23424942,Africa
+admin0,0.47,0.46,cf,CF,Central African Republic,4,C.A.R.,Middle Africa,Sub-Saharan Africa,CAF,CF,23424792,Africa
+admin0,0.5,0.38,sd,SD,Sudan,3,Sudan,Northern Africa,Sub-Saharan Africa,SDN,SD,-90,Africa
+admin0,0.58,0.42,cd,CD,Democratic Republic of the Congo,2,D.R.C.,Middle Africa,Sub-Saharan Africa,COD,CD,23424780,Africa
+admin0,0.61,0.4,kw,KW,Kuwait,6,Kwt.,Western Asia,Middle East & North Africa,KWT,KW,23424870,Asia
+admin0,0.52,0.34,de,DE,Germany,2,Ger.,Western Europe,Europe & Central Asia,DEU,DE,23424829,Europe
+admin0,0.54,0.4,be,BE,Belgium,2,Belg.,Western Europe,Europe & Central Asia,BEL,BE,23424757,Europe
+admin0,0.45,0.48,ie,IE,Ireland,3,Ire.,Northern Europe,Europe & Central Asia,IRL,IE,23424803,Europe
+admin0,0.32,0.63,kp,KP,North Korea,3,N.K.,Eastern Asia,East Asia & Pacific,PRK,KP,23424865,Asia
+admin0,0.54,0.5,kr,KR,South Korea,2,S.K.,Eastern Asia,East Asia & Pacific,KOR,KR,23424868,Asia
+admin0,0.26,0.07,gy,GY,Guyana,4,Guy.,South America,Latin America & Caribbean,GUY,GY,23424836,South America
+admin0,0.71,0.09,hn,HN,Honduras,5,Hond.,Central America,Latin America & Caribbean,HND,HN,23424841,North America
+admin0,0.17,0.49,mm,MM,Myanmar,3,Myan.,South-Eastern Asia,East Asia & Pacific,MMR,MM,23424763,Asia
+admin0,0.36,0.65,ga,GA,Gabon,4,Gabon,Middle Africa,Sub-Saharan Africa,GAB,GA,23424822,Africa
+admin0,0.53,0.55,gq,GQ,Equatorial Guinea,4,Eq. G.,Middle Africa,Sub-Saharan Africa,GNQ,GQ,23424804,Africa
+admin0,0.84,0.5,ni,NI,Nicaragua,5,Nic.,Central America,Latin America & Caribbean,NIC,NI,23424915,North America
+admin0,0.05,0.36,lv,LV,Latvia,5,Lat.,Northern Europe,Europe & Central Asia,LVA,LV,23424874,Europe
+admin0,0.16,0.56,ug,UG,Uganda,3,Uga.,Eastern Africa,Sub-Saharan Africa,UGA,UG,23424974,Africa
+admin0,0.16,0.29,mw,MW,Malawi,6,Mal.,Eastern Africa,Sub-Saharan Africa,MWI,MW,23424889,Africa
+admin0,0.1,0.12,am,AM,Armenia,6,Arm.,Western Asia,Europe & Central Asia,ARM,AM,23424743,Asia
+admin0,0.76,0.53,sx,SX,Somaliland,5,Solnd.,Eastern Africa,Sub-Saharan Africa,-99,SX,-99,Africa
+admin0,0.4,0.42,tm,TM,Turkmenistan,4,Turkm.,Central Asia,Europe & Central Asia,TKM,TM,23424972,Asia
+admin0,0.36,0.58,zm,ZM,Zambia,3,Zambia,Eastern Africa,Sub-Saharan Africa,ZMB,ZM,23425003,Africa
+admin0,0.56,0.71,nc,NC,Northern Cyprus,6,N. Cy.,Western Asia,Europe & Central Asia,-99,NC,-90,Asia
+admin0,0.61,0.63,mr,MR,Mauritania,3,Mrt.,Western Africa,Sub-Saharan Africa,MRT,MR,23424896,Africa
+admin0,0.63,0.5,dz,DZ,Algeria,3,Alg.,Northern Africa,Middle East & North Africa,DZA,DZ,23424740,Africa
+admin0,0.27,0.06,lt,LT,Lithuania,5,Lith.,Northern Europe,Europe & Central Asia,LTU,LT,23424875,Europe
+admin0,0.45,0.58,et,ET,Ethiopia,2,Eth.,Eastern Africa,Sub-Saharan Africa,ETH,ET,23424808,Africa
+admin0,0.29,0.05,er,ER,Eritrea,4,Erit.,Eastern Africa,Sub-Saharan Africa,ERI,ER,23424806,Africa
+admin0,0.13,0.77,gh,GH,Ghana,3,Ghana,Western Africa,Sub-Saharan Africa,GHA,GH,23424824,Africa
+admin0,0.52,0.57,si,SI,Slovenia,6,Slo.,Southern Europe,Europe & Central Asia,SVN,SI,23424945,Europe
+admin0,0.44,0.87,gt,GT,Guatemala,3,Guat.,Central America,Latin America & Caribbean,GTM,GT,23424834,North America
+admin0,0.45,0.48,ba,BA,Bosnia and Herzegovina,5,B.H.,Southern Europe,Europe & Central Asia,BIH,BA,23424761,Europe
+admin0,0.45,0.85,jo,JO,Jordan,4,Jord.,Western Asia,Middle East & North Africa,JOR,JO,23424860,Asia
+admin0,0.25,0.54,sy,SY,Syria,3,Syria,Western Asia,Middle East & North Africa,SYR,SY,23424956,Asia
+admin0,0.5,0.67,mc,MC,Monaco,6,Mco.,Western Europe,Europe & Central Asia,MCO,MC,23424892,Europe
+admin0,0.39,0.49,al,AL,Albania,6,Alb.,Southern Europe,Europe & Central Asia,ALB,AL,23424742,Europe
+admin0,0.81,0.63,uy,UY,Uruguay,4,Ury.,South America,Latin America & Caribbean,URY,UY,23424979,South America
+admin0,0.39,0.11,cnm,CN,Cyprus No Mans Area,9,NA,Western Asia,Europe & Central Asia,-99,NA,-99,Asia
+admin0,0.49,0.53,mn,MN,Mongolia,3,Mong.,Eastern Asia,East Asia & Pacific,MNG,MN,23424887,Asia
+admin0,0.48,0.56,rw,RW,Rwanda,3,Rwa.,Eastern Africa,Sub-Saharan Africa,RWA,RW,23424937,Africa
+admin0,0.39,0.74,so,SO,Somalia,6,Som.,Eastern Africa,Sub-Saharan Africa,SOM,SO,-90,Africa
+admin0,0.48,0.59,bo,BO,Bolivia,3,Bolivia,South America,Latin America & Caribbean,BOL,BO,23424762,South America
+admin0,0.5,0.81,cm,CM,Cameroon,3,Cam.,Middle Africa,Sub-Saharan Africa,CMR,CM,23424785,Africa
+admin0,0.15,0.78,cg,CG,Republic of Congo,4,Rep. Congo,Middle Africa,Sub-Saharan Africa,COG,CG,23424779,Africa
+admin0,0.41,0.71,eh,EH,Western Sahara,7,W. Sah.,Northern Africa,Middle East & North Africa,ESH,EH,23424990,Africa
+admin0,0.42,0.52,rs,RS,Republic of Serbia,5,Serb.,Southern Europe,Europe & Central Asia,SRB,RS,-90,Europe
+admin0,0.42,0.47,me,ME,Montenegro,6,Mont.,Southern Europe,Europe & Central Asia,MNE,ME,20069817,Europe
+admin0,0.76,0.81,tg,TG,Togo,6,Togo,Western Africa,Sub-Saharan Africa,TGO,TG,23424965,Africa
+admin0,0.88,0.79,la,LA,Laos,4,Laos,South-Eastern Asia,East Asia & Pacific,LAO,LA,23424872,Asia
+admin0,0.37,0.52,af,AF,Afghanistan,3,Afg.,Southern Asia,South Asia,AFG,AF,23424739,Asia
+admin0,0.7,0.46,ua,UA,Ukraine,3,Ukr.,Eastern Europe,Europe & Central Asia,UKR,UA,23424976,Europe
+admin0,0.21,0.52,sk,SK,Slovakia,6,Svk.,Eastern Europe,Europe & Central Asia,SVK,SK,23424877,Europe
+admin0,0.4,0.63,jk,JK,Siachen Glacier,5,Siachen,Southern Asia,South Asia,-99,JK,23424928,Asia
+admin0,0.76,0.51,bg,BG,Bulgaria,4,Bulg.,Eastern Europe,Europe & Central Asia,BGR,BG,23424771,Europe
+admin0,0.36,0.46,qa,QA,Qatar,5,Qatar,Western Asia,Middle East & North Africa,QAT,QA,23424930,Asia
+admin0,0.61,0.53,li,LI,Liechtenstein,6,Liech.,Western Europe,Europe & Central Asia,LIE,LI,23424879,Europe
+admin0,0.52,0.62,at,AT,Austria,4,Aust.,Western Europe,Europe & Central Asia,AUT,AT,23424750,Europe
+admin0,0.51,0.45,sz,SZ,Swaziland,4,Swz.,Southern Africa,Sub-Saharan Africa,SWZ,SZ,23424993,Africa
+admin0,0.27,0.61,hu,HU,Hungary,5,Hun.,Eastern Europe,Europe & Central Asia,HUN,HU,23424844,Europe
+admin0,0.67,0.5,ro,RO,Romania,3,Rom.,Eastern Europe,Europe & Central Asia,ROU,RO,23424933,Europe
+admin0,0.64,0.53,ne,NE,Niger,3,Niger,Western Africa,Sub-Saharan Africa,NER,NE,23424906,Africa
+admin0,0.48,0.6,lu,LU,Luxembourg,6,Lux.,Western Europe,Europe & Central Asia,LUX,LU,23424881,Europe
+admin0,0.58,0.28,ad,AD,Andorra,6,And.,Southern Europe,Europe & Central Asia,AND,AD,23424744,Europe
+admin0,0.5,0.48,ci,CI,Ivory Coast,3,I.C.,Western Africa,Sub-Saharan Africa,CIV,CI,23424854,Africa
+admin0,0.96,0.75,lr,LR,Liberia,4,Liberia,Western Africa,Sub-Saharan Africa,LBR,LR,23424876,Africa
+admin0,0.32,0.34,bn,BN,Brunei,6,Brunei,South-Eastern Asia,East Asia & Pacific,BRN,BN,23424773,Asia
+admin0,0.46,0.44,iq,IQ,Iraq,3,Iraq,Western Asia,Middle East & North Africa,IRQ,IQ,23424855,Asia
+admin0,0.99,0.82,ge,GE,Georgia,5,Geo.,Western Asia,Europe & Central Asia,GEO,GE,23424823,Asia
+admin0,0.51,0.51,gm,GM,Gambia,6,Gambia,Western Africa,Sub-Saharan Africa,GMB,GM,23424821,Africa
+admin0,0.12,0.55,ch,CH,Switzerland,4,Switz.,Western Europe,Europe & Central Asia,CHE,CH,23424957,Europe
+admin0,0.47,0.63,td,TD,Chad,3,Chad,Middle Africa,Sub-Saharan Africa,TCD,TD,23424777,Africa
+admin0,0.49,0.52,kv,KV,Kosovo,6,Kos.,Southern Europe,Europe & Central Asia,-99,KV,-90,Europe
+admin0,0.39,0.57,lb,LB,Lebanon,5,Leb.,Western Asia,Middle East & North Africa,LBN,LB,23424873,Asia
+admin0,0.56,0.55,dj,DJ,Djibouti,5,Dji.,Eastern Africa,Middle East & North Africa,DJI,DJ,23424797,Africa
+admin0,0.57,0.47,bi,BI,Burundi,6,Bur.,Eastern Africa,Sub-Saharan Africa,BDI,BI,23424774,Africa
+admin0,0.91,0.09,sr,SR,Suriname,4,Sur.,South America,Latin America & Caribbean,SUR,SR,23424913,South America
+admin0,0.68,0.1,il,IL,Israel,4,Isr.,Western Asia,Middle East & North Africa,ISR,IL,23424852,Asia
+admin0,0.59,0.38,ml,ML,Mali,3,Mali,Western Africa,Sub-Saharan Africa,MLI,ML,23424891,Africa
+admin0,0.2,0.55,sn,SN,Senegal,3,Sen.,Western Africa,Sub-Saharan Africa,SEN,SN,23424943,Africa
+admin0,0.24,0.51,gn,GN,Guinea,3,Gin.,Western Africa,Sub-Saharan Africa,GIN,GN,23424835,Africa
+admin0,0.81,0.42,zw,ZW,Zimbabwe,3,Zimb.,Eastern Africa,Sub-Saharan Africa,ZWE,ZW,23425004,Africa
+admin0,0.5,0.48,pl,PL,Poland,3,Pol.,Eastern Europe,Europe & Central Asia,POL,PL,23424923,Europe
+admin0,0.49,0.44,mk,MK,Macedonia,6,Mkd.,Southern Europe,Europe & Central Asia,MKD,MK,23424890,Europe
+admin0,0.35,0.36,py,PY,Paraguay,4,Para.,South America,Latin America & Caribbean,PRY,PY,23424917,South America
+admin0,0.5,0.5,by,BY,Belarus,4,Bela.,Eastern Europe,Europe & Central Asia,BLR,BY,23424765,Europe
+admin0,0.49,0.56,cz,CZ,Czech Republic,5,Cz. Rep.,Eastern Europe,Europe & Central Asia,CZE,CZ,23424810,Europe
+admin0,0.45,0.54,bf,BF,Burkina Faso,3,B.F.,Western Africa,Sub-Saharan Africa,BFA,BF,23424978,Africa
+admin0,0.33,0.37,na,"NA",Namibia,3,Nam.,Southern Africa,Sub-Saharan Africa,NAM,"NA",23424987,Africa
+admin0,0.51,0.38,ly,LY,Libya,3,Libya,Northern Africa,Middle East & North Africa,LBY,LY,23424882,Africa
+admin0,0.53,0.03,tn,TN,Tunisia,3,Tun.,Northern Africa,Middle East & North Africa,TUN,TN,23424967,Africa
+admin0,0.48,0.48,bt,BT,Bhutan,5,Bhutan,Southern Asia,South Asia,BTN,BT,23424770,Asia
+admin0,0.52,0.42,md,MD,Moldova,6,Mda.,Eastern Europe,Europe & Central Asia,MDA,MD,23424885,Europe
+admin0,0.49,0.58,ss,SS,South Sudan,3,S. Sud.,Eastern Africa,Sub-Saharan Africa,SSD,SS,-99,Africa
+admin0,0.49,0.6,bw,BW,Botswana,4,Bwa.,Southern Africa,Sub-Saharan Africa,BWA,BW,23424755,Africa
+admin0,0.8,0.92,bs,BS,The Bahamas,4,Bhs.,Caribbean,Latin America & Caribbean,BHS,BS,23424758,North America
+admin0,0.25,0.81,nz,NZ,New Zealand,2,N.Z.,Australia and New Zealand,East Asia & Pacific,NZL,NZ,23424916,Oceania
+admin0,0.67,0.64,cu,CU,Cuba,3,Cuba,Caribbean,Latin America & Caribbean,CUB,CU,23424793,North America
+admin0,0.16,0.37,ec,EC,Ecuador,3,Ecu.,South America,Latin America & Caribbean,ECU,EC,23424801,South America
+admin0,0.53,0.39,au,AU,Australia,2,Auz.,Australia and New Zealand,East Asia & Pacific,AUS,AU,-90,Oceania
+admin0,0.5,0.33,ve,VE,Venezuela,3,Ven.,South America,Latin America & Caribbean,VEN,VE,23424982,South America
+admin0,0.13,0.24,sb,SB,Solomon Islands,3,S. Is.,Melanesia,East Asia & Pacific,SLB,SB,23424766,Oceania
+admin0,0.45,0.48,mg,MG,Madagascar,3,Mad.,Eastern Africa,Sub-Saharan Africa,MDG,MG,23424883,Africa
+admin0,0.5,0.5,is,IS,Iceland,3,Iceland,Northern Europe,Europe & Central Asia,ISL,IS,23424845,Europe
+admin0,0.5,0.66,eg,EG,Egypt,2,Egypt,Northern Africa,Middle East & North Africa,EGY,EG,23424802,Africa
+admin0,0.48,0.43,kg,KG,Kyrgyzstan,4,Kgz.,Central Asia,Europe & Central Asia,KGZ,KG,23424864,Asia
+admin0,0.52,0.54,np,NP,Nepal,3,Nepal,Southern Asia,South Asia,NPL,NP,23424911,Asia
