@@ -129,29 +129,16 @@ ui <- navbarPage(
   
     
     sidebarLayout(
-      sidebarPanel(width = 3,
+      sidebarPanel(width = 4,
                    
-                   selectInput(
-                     inputId = "country", 
-                     label = "Select Country",
-                     choices = levels(ts_deaths_long$country), 
-                     multiple = TRUE,
-                     selected = c("China","Iran", "Italy")
+                   p(paste("Updated: ", Sys.time()),
+                   p("Source: https://www.worldometers.info/coronavirus/")),
+                   
+                   dataTableOutput(
+                     outputId = "fulldata"
                    ),
                    
-                   dateRangeInput("dateSelector",
-                                  label = "Observation Period",
-                                  start = ymd("2020-01-01"),
-                                  end = ymd("2020-04-01"),
-                                  separator = "to"
-                   ),
-                   
-                   radioButtons(
-                     inputId = "option",
-                     label = "Choose plot", 
-                     choices = c("case", "death", "recovered")
-                     
-                   ),
+                   br(),
                    
                    p("Created by", a("Ahmad Husain Abdullah", href = "https://github.com/ahmadhusain"), "."),
                    
@@ -159,15 +146,6 @@ ui <- navbarPage(
       ),
       
       mainPanel(
-        tabsetPanel(
-          
-
-          
-          tabPanel("Plot",
-                   
-                   br(),
-                   br(),
-                   
                    includeCSS(path = "adminlte.css"),
                    includeCSS(path = "shinydashboard.css"),
                    
@@ -198,6 +176,43 @@ ui <- navbarPage(
                    br(),
                    br(),
                    
+                   
+                   column(
+                     width = 4,
+                     selectInput(
+                       inputId = "country", 
+                       label = "Select Country",
+                       choices = levels(ts_deaths_long$country), 
+                       multiple = TRUE,
+                       selected = c("China","Iran", "Italy")
+                     )
+                   ),
+                   
+                   column(
+                     width = 4,
+                     
+                     dateRangeInput("dateSelector",
+                                    label = "Observation Period",
+                                    start = ymd("2020-01-01"),
+                                    end = ymd("2020-04-01"),
+                                    separator = "to"
+                     )
+                   ),
+                   
+                   column(
+                     width = 4,
+
+                     radioButtons(
+                       inputId = "option",
+                       label = "Choose plot",
+                       inline = TRUE,
+                       choices = c("case", "death", "recovered")
+             
+                     )
+                   ),
+                   
+                   br(),
+                   
                      highchartOutput(
                        outputId = "plot", 
                      ),
@@ -207,22 +222,10 @@ ui <- navbarPage(
                    highchartOutput(
                      outputId = "map", 
                    )
-                   ),
-          
-          tabPanel("Data Table",
-                   br(),
-                   br(),
-                     dataTableOutput(
-                       outputId = "fulldata"
-                     )
-          )
+                  )
         )
       )
     )
-    
-    
-  )
-)
 
 
 server <- function(input, output) {
@@ -348,8 +351,6 @@ server <- function(input, output) {
     }
     
 
-    
-    
   })
 
   output$fulldata <- renderDataTable({
@@ -357,6 +358,9 @@ server <- function(input, output) {
     
     dat %>% 
       mutate_if(is.numeric, ~comma(.,digits = 0)) %>% 
+      distinct(country, .keep_all = TRUE) %>% 
+      mutate_all(~replace_na(data = ., replace = 0)) %>% 
+      filter(country != "Total:") %>% 
     datatable(caption = 'Table 1: Top 20 Confirmed Cases, Deaths, Recovered by Country',
               options = list(dom = "ft",
                              initComplete = JS(
@@ -364,7 +368,7 @@ server <- function(input, output) {
                                "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
                                "}"), 
                              scrollX = TRUE,
-                             pageLength = 10), 
+                             pageLength = 20), 
               rownames = T) %>% 
       formatStyle(names(dat),
                   backgroundColor = "black",
