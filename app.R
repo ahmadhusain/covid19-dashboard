@@ -248,7 +248,7 @@ server <- function(input, output) {
                )
         ) %>% 
         hc_title(
-          text = "The number of <b>Total Deaths</b>"
+          text = "The Total Number of Deaths"
         ) %>% 
         hc_subtitle(
           text = "The data is compiled by the Johns Hopkins University Center"
@@ -287,7 +287,7 @@ server <- function(input, output) {
                )
         ) %>% 
         hc_title(
-          text = "The number of <b>Total Recovered</b>"
+          text = "The Total Number of Recovered"
         ) %>% 
         hc_subtitle(
           text = "The data is compiled by the Johns Hopkins University Center "
@@ -327,7 +327,7 @@ server <- function(input, output) {
                )
         ) %>% 
         hc_title(
-          text = "The number of <b>Total Confirmed</b>"
+          text = "The Total Number of Confirmed Cases"
         ) %>% 
         hc_subtitle(
           text = "The data is compiled by the Johns Hopkins University Center "
@@ -393,7 +393,7 @@ server <- function(input, output) {
       hc_colorAxis(minColor = "#C5C889", maxColor = "#434348") %>% 
       hc_exporting(enabled = TRUE) %>% 
       hc_title(
-        text = "Mapping Comulative Confirmed Cases by Country"
+        text = "Mapping Cumulative Confirmed Cases by Country"
       ) %>% 
       
       hc_subtitle(

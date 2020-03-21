@@ -5,9 +5,9 @@ account: ahmadhusain
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1956918
-bundleId: 2905478
+bundleId: 2905549
 url: https://ahmadhusain.shinyapps.io/covid19-dashboard/
-when: 1584801974.4194
+when: 1584803739.85066
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: README.md|img/dashboard.gif
