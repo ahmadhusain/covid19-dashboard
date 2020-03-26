@@ -26,19 +26,20 @@ list_dat <- read_html("https://www.worldometers.info/coronavirus") %>%
   html_nodes(css = "td") %>% 
   html_text()
 
-tot_country <- (length(list_dat)/9)-1
+tot_country <- (length(list_dat)/10)-1
 
 
 dat <- tibble(
-  country = list_dat[c(seq(from = 1, to = (tot_country*9)-8, by = 9))],
-  total_cases = list_dat[c(seq(from = 2, to = (tot_country*9)-7, by = 9))],
-  new_cases = list_dat[c(seq(from = 3, to = (tot_country*9)-6, by = 9))],
-  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*9)-5, by = 9))],
-  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*9)-4, by = 9))],
-  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*9)-3, by = 9))],
-  active_cases = list_dat[c(seq(from = 7, to = (tot_country*9)-2, by = 9))],
-  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*9)-1, by = 9))],
-  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*9)-0, by = 9))]
+  country = list_dat[c(seq(from = 1, to = (tot_country*10)-9, by = 10))],
+  total_cases = list_dat[c(seq(from = 2, to = (tot_country*10)-8, by = 10))],
+  new_cases = list_dat[c(seq(from = 3, to = (tot_country*10)-7, by = 10))],
+  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*10)-6, by = 10))],
+  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*10)-5, by = 10))],
+  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*10)-4, by = 10))],
+  active_cases = list_dat[c(seq(from = 7, to = (tot_country*10)-3, by = 10))],
+  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*10)-2, by = 10))],
+  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*10)-1, by = 10))],
+  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*10)-0, by = 10))]
 ) %>% 
   mutate(
     total_cases = str_remove_all(total_cases, pattern = ",") %>% as.numeric(),
@@ -49,6 +50,7 @@ dat <- tibble(
     active_cases = str_remove_all(active_cases, pattern = ",") %>% as.numeric(),
     serious_critical = str_remove_all(serious_critical, pattern = ",") %>% as.numeric(),
     tot_cases_per_pop = str_remove_all(tot_cases_per_pop, pattern = ",") %>% as.numeric(),
+    tot_death_per_pop = str_remove_all(tot_death_per_pop, pattern = ",") %>% as.numeric(),
     country = str_squish(country)
   )
 
@@ -65,7 +67,7 @@ dat_map <- dat %>%
 
 #### confirmed
 
-ts_confirmed <- read.csv(url("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_19-covid-Confirmed.csv"))
+ts_confirmed <- read.csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"))
 
 date_seq <- seq(from = ymd("2020-01-22"), 
                 length.out = ncol(ts_confirmed) - 4,
@@ -83,11 +85,13 @@ ts_confirmed_long <- pivot_longer(
 
 #### recovered
 
-ts_recovered <- read.csv(url("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_19-covid-Recovered.csv"))
+ts_recovered <- read.csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"))
 
+date_seq_recov <- seq(from = ymd("2020-01-22"), 
+                length.out = ncol(ts_recovered) - 4,
+                by = "day")
 
-
-colnames(ts_recovered) <- c("province_state", "country", "lat", "long", as.character(date_seq))
+colnames(ts_recovered) <- c("province_state", "country", "lat", "long", as.character(date_seq_recov))
 
 
 
@@ -103,11 +107,15 @@ ts_recovered_long <- pivot_longer(
 #### deaths
 
 
-ts_deaths <- read.csv(url("https://data.humdata.org/hxlproxy/api/data-preview.csv?url=https%3A%2F%2Fraw.githubusercontent.com%2FCSSEGISandData%2FCOVID-19%2Fmaster%2Fcsse_covid_19_data%2Fcsse_covid_19_time_series%2Ftime_series_19-covid-Deaths.csv"))
+ts_deaths <- read.csv(url("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"))
 
 
+date_seq_deaths <- seq(from = ymd("2020-01-22"), 
+                      length.out = ncol(ts_deaths) - 4,
+                      by = "day")
 
-colnames(ts_deaths) <- c("province_state", "country", "lat", "long", as.character(date_seq))
+
+colnames(ts_deaths) <- c("province_state", "country", "lat", "long", as.character(date_seq_deaths))
 
 
 
