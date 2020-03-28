@@ -30,16 +30,17 @@ tot_country <- (length(list_dat)/10)-1
 
 
 dat <- tibble(
-  country = list_dat[c(seq(from = 1, to = (tot_country*10)-9, by = 10))],
-  total_cases = list_dat[c(seq(from = 2, to = (tot_country*10)-8, by = 10))],
-  new_cases = list_dat[c(seq(from = 3, to = (tot_country*10)-7, by = 10))],
-  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*10)-6, by = 10))],
-  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*10)-5, by = 10))],
-  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*10)-4, by = 10))],
-  active_cases = list_dat[c(seq(from = 7, to = (tot_country*10)-3, by = 10))],
-  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*10)-2, by = 10))],
-  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*10)-1, by = 10))],
-  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*10)-0, by = 10))]
+  country = list_dat[c(seq(from = 1, to = (tot_country*11)-10, by = 11))],
+  total_cases = list_dat[c(seq(from = 2, to = (tot_country*11)-9, by = 11))],
+  new_cases = list_dat[c(seq(from = 3, to = (tot_country*11)-8, by = 11))],
+  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*11)-7, by = 11))],
+  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*11)-6, by = 11))],
+  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*11)-5, by = 11))],
+  active_cases = list_dat[c(seq(from = 7, to = (tot_country*11)-4, by = 11))],
+  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*11)-3, by = 11))],
+  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*11)-2, by = 11))],
+  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*11)-1, by = 11))],
+  first_case = list_dat[c(seq(from = 11, to = (tot_country*11)-0, by = 11))]
 ) %>% 
   mutate(
     total_cases = str_remove_all(total_cases, pattern = ",") %>% as.numeric(),
@@ -165,7 +166,11 @@ ui <- fluidPage(
           includeCSS(path = "shinydashboard.css"),
           
           infoBox(
-            value = tags$p(style = "font-size: 20px;",  comma(sum(dat$total_cases, na.rm = T), digits = 0)),
+            value = tags$p(style = "font-size: 20px;",  comma(sum(dat %>% 
+                                                                    distinct(country, .keep_all = TRUE) %>% 
+                                                                    mutate_all(~replace_na(data = ., replace = 0)) %>%
+                                                                    filter(country != "Total:") %>% 
+                                                                    pull(total_cases), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
             icon = icon("user-check"),
             color = "black",
@@ -173,7 +178,11 @@ ui <- fluidPage(
           ),
           
           infoBox(
-            value = tags$p(style = "font-size: 20px;", comma(sum(dat$total_recovered, na.rm = T), digits = 0)),
+            value = tags$p(style = "font-size: 20px;", comma(sum(dat %>% 
+                                                                   distinct(country, .keep_all = TRUE) %>% 
+                                                                   mutate_all(~replace_na(data = ., replace = 0)) %>% 
+                                                                   filter(country != "Total:") %>% 
+                                                                   pull(total_recovered), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
             icon = icon("user-plus"),
             color = "black",
@@ -181,7 +190,11 @@ ui <- fluidPage(
           ),
           
           infoBox(
-            value = tags$p(style = "font-size: 20px;", comma(sum(dat$total_deaths, na.rm = T), digits = 0)),
+            value = tags$p(style = "font-size: 20px;", comma(sum(dat %>% 
+                                                                   distinct(country, .keep_all = TRUE) %>% 
+                                                                   mutate_all(~replace_na(data = ., replace = 0)) %>% 
+                                                                   filter(country != "Total:") %>% 
+                                                                   pull(total_deaths), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Deaths"),
             icon = icon("user-alt-slash"),
             color = "black",
@@ -383,6 +396,7 @@ server <- function(input, output) {
       distinct(country, .keep_all = TRUE) %>% 
       mutate_all(~replace_na(data = ., replace = 0)) %>% 
       filter(country != "Total:") %>% 
+      arrange(desc(total_cases)) %>% 
     datatable(caption = 'Table 1: Top 20 Confirmed Cases, Deaths, Recovered by Country',
               options = list(dom = "ft",
                              initComplete = JS(
