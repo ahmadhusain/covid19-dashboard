@@ -30,17 +30,16 @@ tot_country <- (length(list_dat)/10)-1
 
 
 dat <- tibble(
-  country = list_dat[c(seq(from = 1, to = (tot_country*11)-10, by = 11))],
-  total_cases = list_dat[c(seq(from = 2, to = (tot_country*11)-9, by = 11))],
-  new_cases = list_dat[c(seq(from = 3, to = (tot_country*11)-8, by = 11))],
-  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*11)-7, by = 11))],
-  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*11)-6, by = 11))],
-  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*11)-5, by = 11))],
-  active_cases = list_dat[c(seq(from = 7, to = (tot_country*11)-4, by = 11))],
-  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*11)-3, by = 11))],
-  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*11)-2, by = 11))],
-  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*11)-1, by = 11))],
-  first_case = list_dat[c(seq(from = 11, to = (tot_country*11)-0, by = 11))]
+  country = list_dat[c(seq(from = 1, to = (tot_country*10)-9, by = 10))],
+  total_cases = list_dat[c(seq(from = 2, to = (tot_country*10)-8, by = 10))],
+  new_cases = list_dat[c(seq(from = 3, to = (tot_country*10)-7, by = 10))],
+  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*10)-6, by = 10))],
+  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*10)-5, by = 10))],
+  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*10)-4, by = 10))],
+  active_cases = list_dat[c(seq(from = 7, to = (tot_country*10)-3, by = 10))],
+  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*10)-2, by = 10))],
+  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*10)-1, by = 10))],
+  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*10)-0, by = 10))]
 ) %>% 
   mutate(
     total_cases = str_remove_all(total_cases, pattern = ",") %>% as.numeric(),
