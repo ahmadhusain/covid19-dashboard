@@ -1,5 +1,13 @@
 .css
 .jd
-.Rproj.user
-rsconnect/shinyapps.io/ahmadhusain
+
+# History files
 .Rhistory
+.RData
+
+# Example code in package build process
+*-Ex.R
+.Rproj.user
+
+# ShinyApps manifest
+*.dcf
