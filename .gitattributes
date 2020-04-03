@@ -1,2 +1,5 @@
 *.css linguist-detectable=false
 *.js linguist-detectable=true
+.Rproj.user
+rsconnect/shinyapps.io/ahmadhusain
+.Rhistory
