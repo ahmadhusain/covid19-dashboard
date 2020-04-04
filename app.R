@@ -30,16 +30,18 @@ tot_country <- (length(list_dat)/10)-1
 
 
 dat <- tibble(
-  country = list_dat[c(seq(from = 1, to = (tot_country*10)-9, by = 10))],
-  total_cases = list_dat[c(seq(from = 2, to = (tot_country*10)-8, by = 10))],
-  new_cases = list_dat[c(seq(from = 3, to = (tot_country*10)-7, by = 10))],
-  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*10)-6, by = 10))],
-  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*10)-5, by = 10))],
-  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*10)-4, by = 10))],
-  active_cases = list_dat[c(seq(from = 7, to = (tot_country*10)-3, by = 10))],
-  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*10)-2, by = 10))],
-  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*10)-1, by = 10))],
-  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*10)-0, by = 10))]
+  country = list_dat[c(seq(from = 1, to = (tot_country*12)-11, by = 12))],
+  total_cases = list_dat[c(seq(from = 2, to = (tot_country*12)-10, by = 12))],
+  new_cases = list_dat[c(seq(from = 3, to = (tot_country*12)-9, by = 12))],
+  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*12)-8, by = 12))],
+  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*12)-7, by = 12))],
+  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*12)-6, by = 12))],
+  active_cases = list_dat[c(seq(from = 7, to = (tot_country*12)-5, by = 12))],
+  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*12)-4, by = 12))],
+  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*12)-3, by = 12))],
+  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*12)-2, by = 12))],
+  tot_test = list_dat[c(seq(from = 11, to = (tot_country*12)-1, by = 12))],
+  test_per_pop = list_dat[c(seq(from = 12, to = (tot_country*12)-0, by = 12))]
 ) %>% 
   mutate(
     total_cases = str_remove_all(total_cases, pattern = ",") %>% as.numeric(),
@@ -51,8 +53,11 @@ dat <- tibble(
     serious_critical = str_remove_all(serious_critical, pattern = ",") %>% as.numeric(),
     tot_cases_per_pop = str_remove_all(tot_cases_per_pop, pattern = ",") %>% as.numeric(),
     tot_death_per_pop = str_remove_all(tot_death_per_pop, pattern = ",") %>% as.numeric(),
+    tot_test = str_remove_all(tot_test, pattern = ",") %>% as.numeric(),
+    test_per_pop = str_remove_all(test_per_pop, pattern = ",") %>% as.numeric(),
     country = str_squish(country)
-  )
+  ) %>% 
+  filter(country != "World")
 
 dat_map <- dat %>% 
   mutate(country = case_when(
@@ -211,7 +216,7 @@ ui <- fluidPage(
               label = "Select Country",
               choices = levels(ts_deaths_long$country), 
               multiple = TRUE,
-              selected = c("China","Iran", "Italy")
+              selected = c("US","Spain", "Italy", "China")
             )
           ),
           
@@ -221,7 +226,7 @@ ui <- fluidPage(
             dateRangeInput("dateSelector",
                            label = "Observation Period",
                            start = ymd("2020-01-01"),
-                           end = ymd("2020-04-01"),
+                           end = ymd(Sys.Date()),
                            separator = "to"
             )
           ),
