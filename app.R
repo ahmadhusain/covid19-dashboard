@@ -12,6 +12,7 @@ library(shinyWidgets)
 library(shinyjs)
 library(DT)
 library(sever)
+library(jsonlite)
 
 options(scipen = 999)
 
@@ -21,54 +22,33 @@ mapdata <- read_csv("mapdata.csv")
 
 ### table global
 
+path_to_file <- "https://pkgstore.datahub.io/core/covid-19/countries-aggregated/archive/2302a6fc05d900f73e31531248cbec9b/countries-aggregated.csv"
 
-list_dat <- read_html("https://www.worldometers.info/coronavirus") %>% 
-  html_nodes(css = "td") %>% 
-  html_text()
+timeseries_update <- read.csv(url(path_to_file)) %>%
+  mutate(Date = ymd(Date)) %>% 
+  group_by(Country) %>% 
+  arrange(desc(Date)) %>% 
+  distinct_at(vars("Country"), .keep_all = TRUE) %>% 
+  pull(Date) %>% 
+  head(1)
 
-tot_country <- (length(list_dat)/10)-1
-
-
-dat <- tibble(
-  country = list_dat[c(seq(from = 1, to = (tot_country*12)-11, by = 12))],
-  total_cases = list_dat[c(seq(from = 2, to = (tot_country*12)-10, by = 12))],
-  new_cases = list_dat[c(seq(from = 3, to = (tot_country*12)-9, by = 12))],
-  total_deaths = list_dat[c(seq(from = 4, to = (tot_country*12)-8, by = 12))],
-  new_deaths = list_dat[c(seq(from = 5, to = (tot_country*12)-7, by = 12))],
-  total_recovered = list_dat[c(seq(from = 6, to = (tot_country*12)-6, by = 12))],
-  active_cases = list_dat[c(seq(from = 7, to = (tot_country*12)-5, by = 12))],
-  serious_critical = list_dat[c(seq(from = 8, to = (tot_country*12)-4, by = 12))],
-  tot_cases_per_pop = list_dat[c(seq(from = 9, to = (tot_country*12)-3, by = 12))],
-  tot_death_per_pop = list_dat[c(seq(from = 10, to = (tot_country*12)-2, by = 12))],
-  tot_test = list_dat[c(seq(from = 11, to = (tot_country*12)-1, by = 12))],
-  test_per_pop = list_dat[c(seq(from = 12, to = (tot_country*12)-0, by = 12))]
-) %>% 
-  mutate(
-    total_cases = str_remove_all(total_cases, pattern = ",") %>% as.numeric(),
-    new_cases = str_remove_all(new_cases, pattern = "\\+") %>% as.numeric(),
-    new_deaths = str_remove_all(new_deaths, pattern = "\\+") %>% as.numeric(),
-    total_deaths = str_remove_all(total_deaths, pattern = ",") %>% as.numeric(),
-    total_recovered = str_remove_all(total_recovered, pattern = ",") %>% as.numeric(),
-    active_cases = str_remove_all(active_cases, pattern = ",") %>% as.numeric(),
-    serious_critical = str_remove_all(serious_critical, pattern = ",") %>% as.numeric(),
-    tot_cases_per_pop = str_remove_all(tot_cases_per_pop, pattern = ",") %>% as.numeric(),
-    tot_death_per_pop = str_remove_all(tot_death_per_pop, pattern = ",") %>% as.numeric(),
-    tot_test = str_remove_all(tot_test, pattern = ",") %>% as.numeric(),
-    test_per_pop = str_remove_all(test_per_pop, pattern = ",") %>% as.numeric(),
-    country = str_squish(country)
-  ) %>% 
-  filter(country != "World")
+dat <- read.csv(url(path_to_file)) %>%
+  mutate(Date = ymd(Date)) %>% 
+  group_by(Country) %>% 
+  arrange(desc(Date)) %>% 
+  distinct_at(vars("Country"), .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  mutate(Country = as.character(Country)) %>% 
+  select(-Date)
 
 dat_map <- dat %>% 
   mutate(country = case_when(
-    country == "USA" ~ "United States of America",
-    country == "UK" ~ "United Kingdom",
-    country == "UAE" ~ "United Arab Emirates",
-    country == "S. Korea" ~ "South Korea",
-    country == "Czechia" ~ "Czech Republic",
-    TRUE ~ country
+    Country == "US" ~ "United States of America",
+    Country == "Korea, South" ~ "South Korea",
+    Country == "Czechia" ~ "Czech Republic",
+    TRUE ~ Country
   )) %>% 
-  left_join(mapdata, by = c("country" = "name"))
+  left_join(mapdata, by = c("Country" = "name"))
 
 #### confirmed
 
@@ -151,8 +131,7 @@ ui <- fluidPage(
       sidebarLayout(
         sidebarPanel(width = 4,
                      
-                     p(paste("Updated: ", Sys.time()),
-                       p("Source: https://www.worldometers.info/coronavirus/")),
+                     p(paste("Updated: ", format(x = timeseries_update, format("%d, %B %Y")))),
                      
                      dataTableOutput(
                        outputId = "fulldata"
@@ -171,10 +150,7 @@ ui <- fluidPage(
           
           infoBox(
             value = tags$p(style = "font-size: 20px;",  comma(sum(dat %>% 
-                                                                    distinct(country, .keep_all = TRUE) %>% 
-                                                                    mutate_all(~replace_na(data = ., replace = 0)) %>%
-                                                                    filter(country != "Total:") %>% 
-                                                                    pull(total_cases), na.rm = T), digits = 0)),
+                                                                    pull(Confirmed), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
             icon = icon("user-check"),
             color = "black",
@@ -183,10 +159,7 @@ ui <- fluidPage(
           
           infoBox(
             value = tags$p(style = "font-size: 20px;", comma(sum(dat %>% 
-                                                                   distinct(country, .keep_all = TRUE) %>% 
-                                                                   mutate_all(~replace_na(data = ., replace = 0)) %>% 
-                                                                   filter(country != "Total:") %>% 
-                                                                   pull(total_recovered), na.rm = T), digits = 0)),
+                                                                   pull(Recovered), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
             icon = icon("user-plus"),
             color = "black",
@@ -195,10 +168,7 @@ ui <- fluidPage(
           
           infoBox(
             value = tags$p(style = "font-size: 20px;", comma(sum(dat %>% 
-                                                                   distinct(country, .keep_all = TRUE) %>% 
-                                                                   mutate_all(~replace_na(data = ., replace = 0)) %>% 
-                                                                   filter(country != "Total:") %>% 
-                                                                   pull(total_deaths), na.rm = T), digits = 0)),
+                                                                   pull(Deaths), na.rm = T), digits = 0)),
             title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Deaths"),
             icon = icon("user-alt-slash"),
             color = "black",
@@ -397,10 +367,7 @@ server <- function(input, output) {
     
     dat %>% 
       mutate_if(is.numeric, ~comma(.,digits = 0)) %>% 
-      distinct(country, .keep_all = TRUE) %>% 
-      mutate_all(~replace_na(data = ., replace = 0)) %>% 
-      filter(country != "Total:") %>% 
-      arrange(desc(total_cases)) %>% 
+      arrange(desc(Confirmed)) %>% 
     datatable(caption = 'Table 1: Top 20 Confirmed Cases, Deaths, Recovered by Country',
               options = list(dom = "ft",
                              initComplete = JS(
@@ -422,7 +389,7 @@ server <- function(input, output) {
   output$map <- renderHighchart({
     
     
-    hcmap(map = "custom/world.js", data = dat_map, value = "total_cases",
+    hcmap(map = "custom/world.js", data = dat_map, value = "Confirmed",
           joinBy = c("iso-a3"), name = "Total Cases",
           dataLabels = list(enabled = TRUE, format = '{point.name}'),
           borderColor = "black", borderWidth = 0.1,
