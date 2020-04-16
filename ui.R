@@ -1,11 +1,25 @@
-library(shiny)
+
 
 shinyUI(
   
   
   fluidPage(
     
+    tags$head(
+      tags$style(
+        HTML(
+          "
+          table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 10px;
+    background: black;
+    font-size: 12px;
+}"
+        )
+      )
+    ),
+    
     use_sever(),
+    useShinyalert(),
     
     navbarPage(
       
@@ -183,6 +197,47 @@ shinyUI(
          )
         )
       )
+     ),
+     
+     
+     tabPanel(
+       
+       "News",
+       
+       sidebarLayout(
+         
+         sidebarPanel(
+           
+           p("You can provide keywords to find the news about this pandemic in Indonesia. Press the 'summary' button to get a resume. The process of text summarization using extractive method with the TextRank algorithm."),
+           
+           textInput(
+             inputId = "getnews",
+             label = "what's are you looking for?", 
+             value = "Corona",
+           ),
+           
+           radioButtons(
+             inputId = "type",
+             label = "Please choose this following types of news:",
+             inline = TRUE,
+             choices = c("finance", "health", "news", "sport")
+             
+           ),
+           
+           actionButton("goButton", "Get!", icon = icon("refresh"))
+           
+         ),
+         mainPanel(
+           column(
+             
+             dataTableOutput(
+               outputId = "newstable"
+             ),
+             width = 12,
+             style = "height:600px; overflow-y: scroll;"
+           )
+         )
+       )
      )
     )
   )

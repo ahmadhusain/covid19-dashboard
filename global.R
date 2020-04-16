@@ -14,6 +14,9 @@ library(DT)
 library(sever)
 library(jsonlite)
 library(httr)
+library(textrank)
+library(shinyalert)
+library(tidytext)
 
 options(scipen = 999)
 
