@@ -17,6 +17,7 @@ library(httr)
 library(textrank)
 library(shinyalert)
 library(tidytext)
+library(shinycssloaders)
 
 options(scipen = 999)
 

@@ -122,13 +122,13 @@ shinyUI(
             
             highchartOutput(
               outputId = "plot"
-            ),
+            ) %>% withSpinner(type = 4, color = "#C5C889", size = 0.5) ,
             
             hr(),
             
             highchartOutput(
               outputId = "map", height = "600px"
-            )
+            ) 
           )
         )
       ),
@@ -185,7 +185,7 @@ shinyUI(
             
             highchartOutput(
               outputId = "plotindo"
-            ),
+            ) %>% withSpinner(type = 4, color = "#C5C889", size = 0.5),
             
             br(),
             hr(),
@@ -232,7 +232,7 @@ shinyUI(
              
              dataTableOutput(
                outputId = "newstable"
-             ),
+             ) %>% withSpinner(type = 4, color = "#C5C889", size = 0.5),
              width = 12,
              style = "height:600px; overflow-y: scroll;"
            )
