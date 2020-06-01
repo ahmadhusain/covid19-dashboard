@@ -43,9 +43,7 @@ shinyServer(
             )
           )
         ) %>% 
-        hc_add_theme(
-          hc_theme_db()
-        ) %>% 
+        hc_add_theme(hc_theme_google()) %>% 
         hc_exporting(enabled = TRUE)
       
     })
@@ -84,9 +82,7 @@ shinyServer(
               )
             )
           ) %>% 
-          hc_add_theme(
-            hc_theme_db()
-          ) %>% 
+          hc_add_theme(hc_theme_google()) %>% 
           hc_exporting(enabled = TRUE)
       } 
       
@@ -123,9 +119,7 @@ shinyServer(
               )
             )
           ) %>% 
-          hc_add_theme(
-            hc_theme_db()
-          ) %>% 
+          hc_add_theme(hc_theme_google()) %>% 
           hc_exporting(enabled = TRUE)
         
       } 
@@ -163,9 +157,7 @@ shinyServer(
               )
             )
           ) %>% 
-          hc_add_theme(
-            hc_theme_db()
-          ) %>% 
+          hc_add_theme(hc_theme_google()) %>% 
           hc_exporting(enabled = TRUE)
         
       }
@@ -183,15 +175,15 @@ shinyServer(
                   options = list(dom = "ft",
                                  initComplete = JS(
                                    "function(settings, json) {",
-                                   "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                   "$(this.api().table().header()).css({'background-color': 'white', 'color': 'black'});",
                                    "}"), 
                                  scrollX = TRUE,
                                  scrollY = "850px",
                                  pageLength = 185), 
                   rownames = T) %>% 
         formatStyle(names(dat),
-                    backgroundColor = "black",
-                    background = "black",
+                    backgroundColor = "white",
+                    background = "white",
                     target = "row",
                     fontSize = "90%") %>% 
         formatCurrency(mark = ",", columns = 2:9, interval = 3, currency = "", digits = 0)
@@ -206,9 +198,7 @@ shinyServer(
             dataLabels = list(enabled = TRUE, format = '{point.name}'),
             borderColor = "black", borderWidth = 0.1,
             tooltip = list(valueDecimals = 0)) %>% 
-        hc_add_theme(
-          hc_theme_db()
-        ) %>% 
+        hc_add_theme(hc_theme_google()) %>% 
         hc_colorAxis(minColor = "#C5C889", maxColor = "#434348") %>% 
         hc_exporting(enabled = TRUE) %>% 
         hc_title(
@@ -227,14 +217,14 @@ shinyServer(
         datatable(options = list(dom = "ft",
                                  initComplete = JS(
                                    "function(settings, json) {",
-                                   "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                   "$(this.api().table().header()).css({'background-color': 'white', 'color': 'black'});",
                                    "}"), 
                                  scrollX = TRUE,
                                  pageLength = 34), 
                   rownames = T) %>% 
         formatStyle(names(dat_indo),
-                    backgroundColor = "black",
-                    background = "black",
+                    backgroundColor = "white",
+                    background = "white",
                     target = "row",
                     fontSize = "90%") %>% 
         formatCurrency(mark = ",", columns = 2:5, interval = 3, currency = "", digits = 0)
@@ -250,9 +240,7 @@ shinyServer(
             dataLabels = list(enabled = TRUE, format = '{point.name}'),
             borderColor = "black", borderWidth = 0.1,
             tooltip = list(valueDecimals = 0)) %>% 
-        hc_add_theme(
-          hc_theme_db()
-        ) %>% 
+        hc_add_theme(hc_theme_google()) %>% 
         hc_colorAxis(minColor = "#C5C889", maxColor = "#434348") %>% 
         hc_exporting(enabled = TRUE) %>% 
         hc_title(
@@ -361,7 +349,7 @@ shinyServer(
         select(title, text, Actions)
         
       }
-    }, server = FALSE, escape = FALSE, selection = 'none')
+    }, escape = FALSE)
     
     value <- reactiveValues(summary = '')
     

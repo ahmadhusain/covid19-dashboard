@@ -18,6 +18,7 @@ library(textrank)
 library(shinyalert)
 library(tidytext)
 library(shinycssloaders)
+library(googlesheets)
 
 options(scipen = 999)
 
@@ -27,14 +28,10 @@ mapdata <- read_csv("mapdata.csv")
 
 ### table global
 
-res <- GET("https://api.kawalcorona.com/")
+gs_auth(token = "token/googlesheets_token.RDS")
 
-dat <- fromJSON(rawToChar(res$content)) %>% 
-  pull(attributes)
-
-dat <- dat %>% 
-  rename(Country = Country_Region) %>% 
-  select(Country, Confirmed, Recovered, Deaths)
+dat <- gs_key(x = "1XYprNQTpX3n4YPFpq3Rq5l77RUfv6MnFRgDxysSAlUc") %>% 
+  gs_read()
 
 selected <- top_n(dat, n = 5, wt = Confirmed) %>% pull(Country)
 
@@ -148,17 +145,8 @@ ts_deaths_long <- pivot_longer(
 
 ### Indonesia
 
-indo <- GET("https://api.kawalcorona.com/indonesia/provinsi")
-dat_indo <- fromJSON(rawToChar(indo$content)) %>% pull(attributes) %>% 
-  mutate(Provinsi = case_when(
-    
-    Provinsi == "Daerah Istimewa Yogyakarta" ~ "Yogyakarta",
-    Provinsi == "Kepulauan Bangka Belitung" ~ "Bangka Belitung",
-    Provinsi == "Papua Barat" ~ "Irian Jaya Barat",
-    
-    TRUE ~ Provinsi
-    
-  ))
+dat_indo <- gs_key(x = "1-EW7SNgJx4oBOUTl_E8hCV9tt2zOKBq_d-osQXVZLnA") %>% 
+  gs_read()
 
 
 
@@ -171,7 +159,6 @@ dat_indo <- dat_indo %>%
          Confirmed = Kasus_Posi, 
          Recovered = Kasus_Semb, 
          Death = Kasus_Meni) %>% 
-  mutate_if(is.numeric, ~comma(.,digits = 0)) %>% 
   arrange(desc(Confirmed)) %>% 
   select(Province, Confirmed, Recovered, Death)
 

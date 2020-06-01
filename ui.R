@@ -11,7 +11,7 @@ shinyUI(
           "
           table.dataTable tbody th, table.dataTable tbody td {
     padding: 8px 10px;
-    background: black;
+    background: white;
     font-size: 12px;
 }"
         )
@@ -24,7 +24,7 @@ shinyUI(
     navbarPage(
       
       "Novel Coronavirus (COVID-19) Situation",
-      theme = shinytheme("cyborg"),
+      theme = shinytheme("united"),
       
       
       
@@ -36,7 +36,11 @@ shinyUI(
         sidebarLayout(
           sidebarPanel(width = 4,
                        
-                       p(paste("Updated: ", format(x = Sys.Date(), format("%d, %B %Y")))),
+                      
+                       p(paste("Updated: ",format(x = Sys.time() %>% ymd_hms() %>% with_tz(tzone = "Asia/Jakarta"),
+                                                  format("%A, %d %B %Y %H:%M:%S")))),
+                       
+                       p("Source: api.kawalcorona.com"),
                        
                        dataTableOutput(
                          outputId = "fulldata"
@@ -58,7 +62,7 @@ shinyUI(
                                                                       pull(Confirmed), na.rm = T), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
               icon = icon("user-check"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
@@ -67,7 +71,7 @@ shinyUI(
                                                                      pull(Recovered), na.rm = T), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
               icon = icon("user-plus"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
@@ -76,7 +80,7 @@ shinyUI(
                                                                      pull(Deaths), na.rm = T), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Deaths"),
               icon = icon("user-alt-slash"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
@@ -144,7 +148,10 @@ shinyUI(
         sidebarLayout(
           sidebarPanel(width = 4,
                        
-                       p(paste("Updated: ", format(x = Sys.Date(), format("%d, %B %Y")))),
+                       p(paste("Updated: ", format(x = Sys.time() %>% ymd_hms() %>% with_tz(tzone = "Asia/Jakarta"),
+                                                   format("%A, %d %B %Y %H:%M:%S")))),
+                       
+                       p("Source: api.kawalcorona.com"),
                        
                        dataTableOutput(
                          outputId = "indodata"
@@ -161,7 +168,7 @@ shinyUI(
               value = tags$p(style = "font-size: 20px;",  comma(pull(infobox_ts_indo, confirmed), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
               icon = icon("user-check"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
@@ -169,7 +176,7 @@ shinyUI(
               value = tags$p(style = "font-size: 20px;", comma(pull(infobox_ts_indo, recovered), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
               icon = icon("user-plus"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
@@ -177,7 +184,7 @@ shinyUI(
               value = tags$p(style = "font-size: 20px;", comma(pull(infobox_ts_indo, deaths), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Deaths"),
               icon = icon("user-alt-slash"),
-              color = "black",
+              color = "red",
               fill = TRUE
             ),
             
