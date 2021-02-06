@@ -2,6 +2,8 @@
 
 Dashboard monitoring the situation of covid-19 globally and in Indonesia specifically. Built using Shiny and Shinydashboard in R. This project aims to provide the information visually the total number of confirmed cases, recovered, and death. The data will be updated automatically every hour.
 
+*Link*: https://ahmadhusain.shinyapps.io/covid19-dashboard/
+
 ![](img/dashboard.gif)
 
 ## Acknowledgments :sparkles:
