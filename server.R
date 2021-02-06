@@ -43,7 +43,9 @@ shinyServer(
             )
           )
         ) %>% 
-        hc_add_theme(hc_theme_google()) %>% 
+        hc_add_theme(
+          hc_theme_db()
+        ) %>% 
         hc_exporting(enabled = TRUE)
       
     })
@@ -82,7 +84,9 @@ shinyServer(
               )
             )
           ) %>% 
-          hc_add_theme(hc_theme_google()) %>% 
+          hc_add_theme(
+            hc_theme_db()
+          ) %>% 
           hc_exporting(enabled = TRUE)
       } 
       
@@ -118,8 +122,10 @@ shinyServer(
                 symbol="circle"
               )
             )
+          ) %>%           
+          hc_add_theme(
+            hc_theme_db()
           ) %>% 
-          hc_add_theme(hc_theme_google()) %>% 
           hc_exporting(enabled = TRUE)
         
       } 
@@ -157,7 +163,9 @@ shinyServer(
               )
             )
           ) %>% 
-          hc_add_theme(hc_theme_google()) %>% 
+          hc_add_theme(
+            hc_theme_db()
+          ) %>% 
           hc_exporting(enabled = TRUE)
         
       }
@@ -175,18 +183,19 @@ shinyServer(
                   options = list(dom = "ft",
                                  initComplete = JS(
                                    "function(settings, json) {",
-                                   "$(this.api().table().header()).css({'background-color': 'white', 'color': 'black'});",
-                                   "}"), 
+                                   "$(this.api().table().header()).css({'background-color': '#000', 'color': '#fff'});",
+                                   "}"),
                                  scrollX = TRUE,
                                  scrollY = "850px",
-                                 pageLength = 185), 
-                  rownames = T) %>% 
+                                 pageLength = 185),
+                  rownames = T) %>%
         formatStyle(names(dat),
-                    backgroundColor = "white",
-                    background = "white",
+                    backgroundColor = "black",
+                    background = "black",
                     target = "row",
-                    fontSize = "90%") %>% 
-        formatCurrency(mark = ",", columns = 2:9, interval = 3, currency = "", digits = 0)
+                    color = "white",
+                    fontSize = "90%") %>%
+        formatCurrency(mark = ",", columns = 2:4, interval = 3, currency = "", digits = 0)
       
     })
     
@@ -198,8 +207,10 @@ shinyServer(
             dataLabels = list(enabled = TRUE, format = '{point.name}'),
             borderColor = "black", borderWidth = 0.1,
             tooltip = list(valueDecimals = 0)) %>% 
-        hc_add_theme(hc_theme_google()) %>% 
-        hc_colorAxis(minColor = "#C5C889", maxColor = "#434348") %>% 
+        hc_add_theme(
+          hc_theme_db()
+        ) %>% 
+        hc_colorAxis(minColor = "#C5C889", maxColor = "#434348", type = "logarithmic") %>% 
         hc_exporting(enabled = TRUE) %>% 
         hc_title(
           text = "Mapping Cumulative Confirmed Cases by Country"
@@ -217,17 +228,18 @@ shinyServer(
         datatable(options = list(dom = "ft",
                                  initComplete = JS(
                                    "function(settings, json) {",
-                                   "$(this.api().table().header()).css({'background-color': 'white', 'color': 'black'});",
+                                   "$(this.api().table().header()).css({'background-color': 'black', 'color': 'white'});",
                                    "}"), 
                                  scrollX = TRUE,
                                  pageLength = 34), 
                   rownames = T) %>% 
         formatStyle(names(dat_indo),
-                    backgroundColor = "white",
-                    background = "white",
+                    backgroundColor = "black",
+                    background = "black",
                     target = "row",
-                    fontSize = "90%") %>% 
-        formatCurrency(mark = ",", columns = 2:5, interval = 3, currency = "", digits = 0)
+                    color = "white",
+                    fontSize = "90%") %>%
+        formatCurrency(mark = ",", columns = 2:4, interval = 3, currency = "", digits = 0)
       
     })
     
@@ -240,8 +252,10 @@ shinyServer(
             dataLabels = list(enabled = TRUE, format = '{point.name}'),
             borderColor = "black", borderWidth = 0.1,
             tooltip = list(valueDecimals = 0)) %>% 
-        hc_add_theme(hc_theme_google()) %>% 
-        hc_colorAxis(minColor = "#C5C889", maxColor = "#434348") %>% 
+        hc_add_theme(
+          hc_theme_db()
+        ) %>%  
+        hc_colorAxis(minColor = "white", maxColor = "red", type = "logarithmic") %>% 
         hc_exporting(enabled = TRUE) %>% 
         hc_title(
           text = "Mapping Cumulative Confirmed Cases in Indonesia"

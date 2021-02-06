@@ -11,7 +11,7 @@ shinyUI(
           "
           table.dataTable tbody th, table.dataTable tbody td {
     padding: 8px 10px;
-    background: white;
+    background: black;
     font-size: 12px;
 }"
         )
@@ -24,7 +24,7 @@ shinyUI(
     navbarPage(
       
       "Novel Coronavirus (COVID-19) Situation",
-      theme = shinytheme("united"),
+      theme = shinytheme("cyborg"),
       
       
       
@@ -42,15 +42,20 @@ shinyUI(
                        
                        p("Source: api.kawalcorona.com"),
                        
+                       
+                       p("Created by", a("Ahmad Husain", href = "https://github.com/ahmadhusain")),
+                       
+                       img(src = "http://www.gravatar.com/avatar/faa60428b46ecc30beeef02974e49d47?s=64", width = "70px", height = "70px"),
+                
+                       
                        dataTableOutput(
                          outputId = "fulldata"
                        ),
                        
-                       br(),
+                       hr(),
                        
-                       p("Created by", a("Ahmad Husain Abdullah", href = "https://github.com/ahmadhusain"), "."),
-                       
-                       img(src = "http://www.gravatar.com/avatar/faa60428b46ecc30beeef02974e49d47?s=64", width = "70px", height = "70px")
+                       p("Developed using R shiny.", a("Get the code!", href = "https://github.com/ahmadhusain/covid19-dashboard"))
+
           ),
           
           mainPanel(
@@ -62,7 +67,7 @@ shinyUI(
                                                                       pull(Confirmed), na.rm = T), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
               icon = icon("user-check"),
-              color = "red",
+              color = "blue",
               fill = TRUE
             ),
             
@@ -71,7 +76,7 @@ shinyUI(
                                                                      pull(Recovered), na.rm = T), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
               icon = icon("user-plus"),
-              color = "red",
+              color = "green",
               fill = TRUE
             ),
             
@@ -93,7 +98,7 @@ shinyUI(
               selectInput(
                 inputId = "country", 
                 label = "Select Country",
-                choices = levels(ts_deaths_long$country), 
+                choices = unique(ts_deaths_long$country), 
                 multiple = TRUE,
                 selected = selected
               )
@@ -113,13 +118,14 @@ shinyUI(
             column(
               width = 4,
               
-              radioButtons(
+              selectInput(
                 inputId = "option",
                 label = "Choose plot",
-                inline = TRUE,
+                selected = "confirmed",
                 choices = c("confirmed", "death", "recovered")
                 
               )
+ 
             ),
             
             br(),
@@ -168,7 +174,7 @@ shinyUI(
               value = tags$p(style = "font-size: 20px;",  comma(pull(infobox_ts_indo, confirmed), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Cases"),
               icon = icon("user-check"),
-              color = "red",
+              color = "blue",
               fill = TRUE
             ),
             
@@ -176,7 +182,7 @@ shinyUI(
               value = tags$p(style = "font-size: 20px;", comma(pull(infobox_ts_indo, recovered), digits = 0)),
               title = tags$p(style = "font-size: 30px; text-transform: capitalize;", "Recovered"),
               icon = icon("user-plus"),
-              color = "red",
+              color = "green",
               fill = TRUE
             ),
             
@@ -241,7 +247,7 @@ shinyUI(
                outputId = "newstable"
              ) %>% withSpinner(type = 4, color = "#C5C889", size = 0.5),
              width = 12,
-             style = "height:600px; overflow-y: scroll;"
+             style = "height:800px; overflow-y: scroll;"
            )
          )
        )

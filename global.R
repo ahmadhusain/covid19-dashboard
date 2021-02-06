@@ -172,8 +172,8 @@ ts_deaths_indo <- ts_deaths_long %>%
   filter(country == "Indonesia")
 
 ts_indo <- ts_confirmed_indo %>% 
-  bind_cols(ts_recovered_indo) %>% 
-  bind_cols(ts_deaths_indo) %>% 
+  left_join(ts_recovered_indo, by = c("datetime", "country")) %>% 
+  left_join(ts_deaths_indo, by = c("datetime", "country")) %>% 
   select(datetime, confirmed, recovered, deaths)
 
 ts_indo_longer <- pivot_longer(
